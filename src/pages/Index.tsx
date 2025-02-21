@@ -1,10 +1,24 @@
-
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useScroll } from "framer-motion";
 import { Calendar, Lock, Users, Mail, ChartBar, FileText } from "lucide-react";
 
 const Index = () => {
   const [selectedFaq, setSelectedFaq] = useState<number | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { scrollY } = useScroll();
+
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      setIsScrolled(latest > 50);
+    });
+  }, [scrollY]);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const features = [
     {
@@ -97,7 +111,43 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-brand-light">
-      {/* Hero Section */}
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed w-full z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/90 backdrop-blur-md shadow-sm"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex-shrink-0">
+              <span className="text-2xl font-bold text-brand-dark">LeaveBook</span>
+            </div>
+            <div className="hidden md:block">
+              <div className="flex items-center space-x-8">
+                {[
+                  { name: "Features", id: "features" },
+                  { name: "Pricing", id: "pricing" },
+                  { name: "Team", id: "team" },
+                  { name: "FAQ", id: "faq" },
+                  { name: "Contact", id: "contact" },
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-brand-gray hover:text-brand-dark transition-colors duration-200"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.nav>
+
       <section className="relative h-screen flex items-center justify-center text-center px-4">
         <div className="max-w-4xl mx-auto">
           <motion.h1
@@ -127,8 +177,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 px-4">
+      <section id="features" className="py-20 px-4">
         <h2 className="section-title">Powerful Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {features.map((feature, index) => (
@@ -147,8 +196,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20 px-4 bg-white">
+      <section id="pricing" className="py-20 px-4 bg-white">
         <h2 className="section-title">Pricing Plans</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <motion.div
@@ -203,8 +251,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 px-4">
+      <section id="team" className="py-20 px-4">
         <h2 className="section-title">Meet Our Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {team.map((member, index) => (
@@ -227,8 +274,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 px-4 bg-white">
+      <section id="faq" className="py-20 px-4 bg-white">
         <h2 className="section-title">Frequently Asked Questions</h2>
         <div className="max-w-3xl mx-auto">
           {faqs.map((faq, index) => (
@@ -260,8 +306,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20 px-4">
+      <section id="contact" className="py-20 px-4">
         <h2 className="section-title">Contact Us</h2>
         <div className="max-w-xl mx-auto text-center">
           <p className="mb-8 text-brand-gray">
