@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useState, useEffect } from "react"
@@ -147,7 +148,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-brand-light">
-      {/* Navigation Bar */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -184,7 +184,7 @@ const Index = () => {
           </div>
         </div>
       </motion.nav>
-
+      
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto text-center">
