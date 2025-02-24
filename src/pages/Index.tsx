@@ -4,6 +4,12 @@
 import { useState, useEffect } from "react"
 import { motion, useScroll } from "framer-motion"
 import { Calendar, Lock, Star, Users, Mail, BarChartIcon as ChartBar, Shield } from "lucide-react"
+import Akansha from "../assets/Akansha.jpg"
+import Sanuja from "../assets/Sanuja.png"
+import Janindu from "../assets/Janindu.png"
+import Yasindu from "../assets/Yasindu.png"
+import Thinula from "../assets/Thinula.jpg"
+import Sanidu from "../assets/Sanidu.png"
 
 const Index = () => {
   const [selectedFaq, setSelectedFaq] = useState<number | null>(null)
@@ -89,32 +95,32 @@ const Index = () => {
     {
       name: "Akansha Fernando",
       role: "Project Organizer",
-      image: "https://i.pravatar.cc/900",
+      image: Akansha,
     },
     {
       name: "Sanuja Nethsuka",
       role: "Backend Developer",
-      image: "https://i.pravatar.cc/950",
+      image: Sanuja,
     },
     {
       name: "Thinula Jayavihan",
       role: "Fullstack Developer",
-      image: "https://i.pravatar.cc/990",
+      image: Thinula,
     },
     {
       name: "Janindu Weerakkody",
       role: "Frontend Developer",
-      image: "https://i.pravatar.cc/935",
+      image: Janindu,
     },
     {
       name: "Yasindu Mallawarachchi",
       role: "Fullstack Developer",
-      image: "https://i.pravatar.cc/940",
+      image: Yasindu,
     },
     {
       name: "Sanidu Wickramasinghe",
       role: "UI/UX Developer",
-      image: "https://i.pravatar.cc/500",
+      image: Sanidu,
     },
   ]
 
@@ -267,7 +273,8 @@ const Index = () => {
       {/* Pricing Section */}
       <section id="pricing" className="py-20 px-4 bg-white">
         <h2 className="section-title">Pricing Plans</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* StartUp Plan */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -275,6 +282,40 @@ const Index = () => {
             className="pricing-card"
           >
             <h3 className="text-2xl font-bold mb-4">StartUp</h3>
+            <p className="text-4xl font-bold mb-6">
+              $5<span className="text-lg font-normal">/month</span>
+            </p>
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-center">
+                <Calendar className="w-5 h-5 text-brand-blue mr-2" />
+                Full feature access
+              </li>
+              <li className="flex items-center">
+                <Users className="w-5 h-5 text-brand-blue mr-2" />
+                Up to 2 teams
+              </li>
+              <li className="flex items-center">
+                <Mail className="w-5 h-5 text-brand-blue mr-2" />
+                Email notifications
+              </li>
+              <li className="flex items-center">
+                <Shield className="w-5 h-5 text-brand-blue mr-2" />
+                StartUp Level Security
+              </li>
+            </ul>
+            <a href="/payment?plan=startup" className="button-primary w-full">
+              Choose StartUp Plan
+            </a>
+          </motion.div>
+
+          {/* Pro Plan */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="pricing-card"
+          >
+            <h3 className="text-2xl font-bold mb-4">Pro</h3>
             <p className="text-4xl font-bold mb-6">
               $19<span className="text-lg font-normal">/month</span>
             </p>
@@ -285,18 +326,23 @@ const Index = () => {
               </li>
               <li className="flex items-center">
                 <Users className="w-5 h-5 text-brand-blue mr-2" />
-                All roles included
+                Up to 10 teams
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 text-brand-blue mr-2" />
                 Email notifications
               </li>
+              <li className="flex items-center">
+                <Shield className="w-5 h-5 text-brand-blue mr-2" />
+                Pro Level Security
+              </li>
             </ul>
-            <a href="/payment?plan=startup" className="button-primary w-full">
-              Choose StartUp Plan
+            <a href="/payment?plan=pro" className="button-primary w-full">
+              Choose Pro Plan
             </a>
           </motion.div>
 
+          {/* Enterprise Plan */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -305,7 +351,7 @@ const Index = () => {
           >
             <h3 className="text-2xl font-bold mb-4">Enterprise</h3>
             <p className="text-4xl font-bold mb-6">
-              $999<span className="text-lg font-normal">/lifetime</span>
+              $99<span className="text-lg font-normal">/lifetime</span>
             </p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-center">
@@ -314,11 +360,15 @@ const Index = () => {
               </li>
               <li className="flex items-center">
                 <Users className="w-5 h-5 text-brand-blue mr-2" />
-                Dedicated support
+                Unlimited teams
               </li>
               <li className="flex items-center">
                 <Lock className="w-5 h-5 text-brand-blue mr-2" />
                 Enterprise security
+              </li>
+              <li className="flex items-center">
+                <Mail className="w-5 h-5 text-brand-blue mr-2" />
+                Email notifications
               </li>
             </ul>
             <a href="/payment?plan=enterprise" className="button-primary w-full">
@@ -377,7 +427,7 @@ const Index = () => {
               Leave Book has been a game-changer for us! With Azure-backed security, easy role management, and automated
               leave approval, it's helped us improve both productivity and employee satisfaction."
             </blockquote>
-            <cite className="text-heading font-medium block">— Dil Fernando, HR Manager at Xyicon</cite>
+            <cite className="text-heading font-medium block">— Dilshani Fernando, HR Manager at Xyicon</cite>
           </motion.div>
         </div>
       </section>
@@ -448,7 +498,7 @@ const Index = () => {
               <strong>Phone:</strong> +94 771603251
             </p>
             <p>
-              <strong>Address:</strong> 3G, Araliya Gardens, 
+              <strong>Address:</strong> 3G, Araliya Gardens, Thalahena
             </p>
           </div>
         </div>
