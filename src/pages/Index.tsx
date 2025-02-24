@@ -8,7 +8,7 @@ import Akansha from "../assets/Akansha.jpg"
 import Sanuja from "../assets/Sanuja.png"
 import Janindu from "../assets/Janindu.png"
 import Yasindu from "../assets/Yasindu.png"
-import Thinula from "../assets/Thinula.jpg"
+import Thinula from "../assets/Thinula.png"
 import Sanidu from "../assets/Sanidu.png"
 
 const Index = () => {
@@ -495,10 +495,10 @@ const Index = () => {
               <strong>Email:</strong> leavebookdesk@outlook.com
             </p>
             <p>
-              <strong>Phone:</strong> +94 771603251
+              <strong>Phone:</strong> +94 77 160 3251
             </p>
             <p>
-              <strong>Address:</strong> 3G, Araliya Gardens, Thalahena
+              <strong>Address:</strong> 3G, Araliya Place, Thalahena, Malabe
             </p>
           </div>
         </div>
