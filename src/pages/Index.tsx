@@ -274,7 +274,7 @@ const Index = () => {
       <section id="pricing" className="py-20 px-4 bg-white">
         <h2 className="section-title">Pricing Plans</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* StartUp Plan */}
+         
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -283,32 +283,32 @@ const Index = () => {
           >
             <h3 className="text-2xl font-bold mb-4">StartUp</h3>
             <p className="text-4xl font-bold mb-6">
-              $5<span className="text-lg font-normal">/month</span>
+              LKR 125k<span className="text-lg font-normal">/year</span>
             </p>
             <ul className="space-y-3 mb-8">
-              <li className="flex items-center">
-                <Calendar className="w-5 h-5 text-brand-blue mr-2" />
-                Full feature access
-              </li>
+            
               <li className="flex items-center">
                 <Users className="w-5 h-5 text-brand-blue mr-2" />
-                Up to 2 teams
+                Up to 25 Emplyees
               </li>
+
               <li className="flex items-center">
                 <Mail className="w-5 h-5 text-brand-blue mr-2" />
                 Email notifications
               </li>
-              <li className="flex items-center">
+
+              {/* <li className="flex items-center">
                 <Shield className="w-5 h-5 text-brand-blue mr-2" />
                 StartUp Level Security
-              </li>
+              </li> */}
+
             </ul>
             <a href="/payment?plan=startup" className="button-primary w-full">
               Choose StartUp Plan
             </a>
           </motion.div>
 
-          {/* Pro Plan */}
+         
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -342,7 +342,7 @@ const Index = () => {
             </a>
           </motion.div>
 
-          {/* Enterprise Plan */}
+          
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
