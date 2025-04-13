@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LeaveBook - Modern Leave Management System</title>
-    <meta name="title" content="LeaveBook - Modern Leave Management System">
-    <meta name="description" content="Streamline your organization's leave management with LeaveBook. Automate approvals, track balances, and ensure compliance with our secure, user-friendly platform built for global workforces.">
-    <meta name="keywords" content="leave management system, employee leave tracking, HR automation, leave request software, time off management, absence management, leave approval workflow, LeaveBook">
-    <meta name="author" content="LeaveBook">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    
+    <meta name="title" content="LeaveBook - Modern Leave Management System" />
+    <meta
+      name="description"
+      content="Streamline your organization's leave management with LeaveBook. Automate approvals, track balances, and ensure compliance with our secure, user-friendly platform built for global workforces." />
+    <meta
+      name="keywords"
+      content="leave management system, employee leave tracking, HR automation, leave request software, time off management, absence management, leave approval workflow, LeaveBook" />
+    <meta name="author" content="LeaveBook" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://leavebook.com/">
-    <meta property="og:title" content="LeaveBook - Automated Leave Management Solution">
-    <meta property="og:description" content="Replace manual spreadsheets with LeaveBook's intuitive leave management system. Real-time tracking, automated workflows, and secure access for employees, managers, and HR teams.">
-    <meta property="og:image" content="https://leavebook.com/og-image.jpg">
-    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://leavebook.com/" />
+    <meta
+      property="og:title"
+      content="LeaveBook - Automated Leave Management Solution" />
+    <meta
+      property="og:description"
+      content="Replace manual spreadsheets with LeaveBook's intuitive leave management system. Real-time tracking, automated workflows, and secure access for employees, managers, and HR teams." />
+    <meta property="og:image" content="https://leavebook.com/og-image.jpg" />
+
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://leavebook.com/">
-    <meta property="twitter:title" content="LeaveBook - Streamline Employee Leave Management">
-    <meta property="twitter:description" content="Modern leave management with role-based access, real-time dashboards, and seamless integration. Improve efficiency and reduce errors in your leave processes.">
-    <meta property="twitter:image" content="https://leavebook.com/twitter-image.jpg">
-    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://leavebook.com/" />
+    <meta
+      property="twitter:title"
+      content="LeaveBook - Streamline Employee Leave Management" />
+    <meta
+      property="twitter:description"
+      content="Modern leave management with role-based access, real-time dashboards, and seamless integration. Improve efficiency and reduce errors in your leave processes." />
+    <meta
+      property="twitter:image"
+      content="https://leavebook.com/twitter-image.jpg" />
+
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://leavebook.com/">
-    
+    <link rel="canonical" href="https://leavebook.com/" />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
 
   <body>
@@ -39,4 +53,36 @@
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+  <script>
+    (function () {
+      if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+        window.chatbase = (...arguments) => {
+          if (!window.chatbase.q) {
+            window.chatbase.q = [];
+          }
+          window.chatbase.q.push(arguments);
+        };
+        window.chatbase = new Proxy(window.chatbase, {
+          get(target, prop) {
+            if (prop === "q") {
+              return target.q;
+            }
+            return (...args) => target(prop, ...args);
+          },
+        });
+      }
+      const onLoad = function () {
+        const script = document.createElement("script");
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "n8eSgAHboy9F6tQnLmENm";
+        script.domain = "www.chatbase.co";
+        document.body.appendChild(script);
+      };
+      if (document.readyState === "complete") {
+        onLoad();
+      } else {
+        window.addEventListener("load", onLoad);
+      }
+    })();
+  </script>
 </html>

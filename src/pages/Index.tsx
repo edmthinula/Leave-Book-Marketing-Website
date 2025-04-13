@@ -10,11 +10,13 @@ import {
   BarChart as ChartBar,
   Shield,
   CheckCircle,
-  Clock,
+  Send,
+  Phone,
+  MapPin,
   FileText,
   Database,
   Upload,
-  DownloadCloud,
+  MessageCircle,
   PlayCircle
 } from "lucide-react";
 
@@ -32,6 +34,7 @@ import Janindu from "../assets/Janindu.png";
 import Yasindu from "../assets/Yasindu.png";
 import Thinula from "../assets/Thinula.png";
 import Sanidu from "../assets/Sanidu.png";
+import { FeaturesSection } from "@/components/FeatureSection";
 
 const Index = () => {
   const { scrollY } = useScroll();
@@ -76,6 +79,67 @@ const Index = () => {
       description: "Comprehensive leave statistics and insights.",
       icon: ChartBar,
     },
+  ];
+
+  const teamMembers = [
+    {
+      name: "Akansha Wijesinghe",
+      role: "Frontend Engineer",
+      image: Akansha,
+      social: {
+        linkedin: "https://linkedin.com/in/akansha-wijesinghe",
+        twitter: "https://twitter.com/akansha_dev",
+        email: "akansha@example.com"
+      }
+    },
+    {
+      name: "Sanuja Fernando",
+      role: "Project Manager",
+      image: Sanuja,
+      social: {
+        linkedin: "https://linkedin.com/in/sanuja-fernando",
+        twitter: "https://twitter.com/sanuja_dev",
+        email: "sanuja@example.com"
+      }
+    },
+    {
+      name: "Janindu Perera",
+      role: "Full Stack Developer",
+      image: Janindu,
+      social: {
+        linkedin: "https://linkedin.com/in/janindu-perera",
+        twitter: "https://twitter.com/janindu_dev",
+        email: "janindu@example.com"
+      }
+    },
+    {
+      name: "Yasindu Senanayake",
+      role: "Cloud & DevOps Engineer",
+      image: Yasindu,
+      social: {
+        linkedin: "https://linkedin.com/in/yasindu-senanayake",
+        email: "yasindu@example.com"
+      }
+    },
+    {
+      name: "Thinula Fernando",
+      role: "UI/UX Designer",
+      image: Thinula,
+      social: {
+        linkedin: "https://linkedin.com/in/thinula-fernando",
+        twitter: "https://twitter.com/thinula_ui",
+        email: "thinula@example.com"
+      }
+    },
+    {
+      name: "Sanidu Samarasinghe",
+      role: "Mobile App Developer",
+      image: Sanidu,
+      social: {
+        linkedin: "https://linkedin.com/in/sanidu-samarasinghe",
+        email: "sanidu@example.com"
+      }
+    }
   ];
 
   const steps = [
@@ -214,191 +278,255 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Powerful Features</h2>
-            <p className="text-xl text-brand-gray max-w-3xl mx-auto">
-              Everything you need to manage your organization's leave process efficiently and securely.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <FeatureCard
-                key={index}
-                icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturesSection features={features}/>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Pricing Plans</h2>
-            <p className="text-xl text-brand-gray max-w-3xl mx-auto">
-              Choose the plan that fits your organization's needs.
-            </p>
-          </motion.div>
+<section id="pricing" className="py-24 bg-gradient-to-b from-white to-blue-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <span className="px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4 inline-block">FLEXIBLE OPTIONS</span>
+      <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+        Simple, Transparent Pricing
+      </h2>
+      <p className="text-xl text-brand-gray max-w-2xl mx-auto">
+        Choose the plan that fits your organization's needs with no hidden fees.
+      </p>
+    </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {/* Basic Plan */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100"
-            >
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-brand-dark mb-4">Basic</h3>
-                <div className="flex items-baseline mb-4">
-                  <span className="text-4xl font-bold">$10</span>
-                  <span className="text-lg text-brand-gray ml-1">/month</span>
-                </div>
-                <p className="text-brand-gray mb-6">For small organizations needing essential leave management.</p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>Annual Leave Loop</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>Leave Request Management</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>Approval Workflow</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>Role-Based Access Control</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="px-8 pb-8">
-                <Link to="/payment?plan=basic" className="block w-full py-3 px-4 rounded-lg bg-brand-blue text-white text-center font-medium hover:bg-opacity-90 transition-all duration-300">
-                  Choose Basic Plan
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Standard Plan */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-lg overflow-hidden border border-brand-blue relative transform scale-105 z-10"
-            >
-              <div className="bg-brand-blue text-white text-center py-2 text-sm font-medium">
-                MOST POPULAR
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-brand-dark mb-4">Standard</h3>
-                <div className="flex items-baseline mb-4">
-                  <span className="text-4xl font-bold">$20</span>
-                  <span className="text-lg text-brand-gray ml-1">/month</span>
-                </div>
-                <p className="text-brand-gray mb-6">For mid-sized organizations needing enhanced communication.</p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>All Basic features</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>Email Notifications</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>Leave Balance Tracking</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>Company Calendar</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="px-8 pb-8">
-                <Link to="/payment?plan=standard" className="block w-full py-3 px-4 rounded-lg bg-brand-blue text-white text-center font-medium hover:bg-opacity-90 transition-all duration-300">
-                  Choose Standard Plan
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Premium Plan */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100"
-            >
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-brand-dark mb-4">Premium</h3>
-                <div className="flex items-baseline mb-4">
-                  <span className="text-4xl font-bold">$35</span>
-                  <span className="text-lg text-brand-gray ml-1">/month</span>
-                </div>
-                <p className="text-brand-gray mb-6">For large organizations requiring comprehensive oversight.</p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>All Standard features</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>Enhanced Leave Tracking</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>Medical Document Upload</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-blue mt-0.5 mr-2" />
-                    <span>Report Export Functionality</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="px-8 pb-8">
-                <Link to="/payment?plan=premium" className="block w-full py-3 px-4 rounded-lg bg-brand-blue text-white text-center font-medium hover:bg-opacity-90 transition-all duration-300">
-                  Choose Premium Plan
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Feature Comparison Table */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold text-brand-dark mb-6 text-center">Feature Comparison</h3>
-            <FeatureComparison />
-          </motion.div>
+    <div className="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-6 mb-16">
+      {/* Toggle Annual/Monthly */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="flex justify-center items-center w-full"
+      >
+        <div className="bg-gray-100 p-1 rounded-lg inline-flex">
+          <button className="px-4 py-2 rounded-md bg-white shadow-sm text-brand-blue font-medium text-sm">
+            Monthly
+          </button>
+          <button className="px-4 py-2 text-gray-500 font-medium text-sm">
+            Annual (Save 20%)
+          </button>
         </div>
-      </section>
+      </motion.div>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      {/* Basic Plan */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0 }}
+        viewport={{ once: true }}
+        className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl hover:border-blue-100 transition-all duration-300"
+      >
+        <div className="p-8">
+          <div className="rounded-full bg-blue-50 w-12 h-12 flex items-center justify-center mb-4">
+            <Calendar className="h-6 w-6 text-blue-600" />
+          </div>
+          <h3 className="text-2xl font-bold text-brand-dark mb-2">Basic</h3>
+          <div className="flex items-baseline mb-4">
+            <span className="text-4xl font-bold">$10</span>
+            <span className="text-lg text-brand-gray ml-1">/month</span>
+          </div>
+          <p className="text-brand-gray mb-6 pb-6 border-b border-gray-100">
+            Perfect for small teams getting started with leave management.
+          </p>
+          <ul className="space-y-4 mb-8">
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Annual Leave Loop</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Leave Request Management</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Approval Workflow</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Role-Based Access Control</span>
+            </li>
+          </ul>
+        </div>
+        <div className="px-8 pb-8">
+          <Link 
+            to="/payment?plan=basic" 
+            className="block w-full py-3 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white text-center font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-md hover:shadow-lg"
+          >
+            Start with Basic
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* Standard Plan */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="bg-white rounded-2xl shadow-2xl overflow-hidden border-2 border-brand-blue relative z-10 transform scale-105"
+      >
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center py-2 text-sm font-medium">
+          RECOMMENDED
+        </div>
+        <div className="p-8">
+          <div className="rounded-full bg-blue-100 w-12 h-12 flex items-center justify-center mb-4">
+            <Users className="h-6 w-6 text-blue-600" />
+          </div>
+          <h3 className="text-2xl font-bold text-brand-dark mb-2">Standard</h3>
+          <div className="flex items-baseline mb-4">
+            <span className="text-4xl font-bold">$20</span>
+            <span className="text-lg text-brand-gray ml-1">/month</span>
+          </div>
+          <p className="text-brand-gray mb-6 pb-6 border-b border-gray-100">
+            Ideal for growing teams with communication needs.
+          </p>
+          <ul className="space-y-4 mb-8">
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span className="font-medium">All Basic features, plus:</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Email Notifications</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Leave Balance Tracking</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Company Calendar</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Priority Support</span>
+            </li>
+          </ul>
+        </div>
+        <div className="px-8 pb-8">
+          <Link 
+            to="/payment?plan=standard" 
+            className="block w-full py-3 px-4 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Choose Standard
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* Premium Plan */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        viewport={{ once: true }}
+        className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl hover:border-blue-100 transition-all duration-300"
+      >
+        <div className="p-8">
+          <div className="rounded-full bg-indigo-50 w-12 h-12 flex items-center justify-center mb-4">
+            <Shield className="h-6 w-6 text-indigo-600" />
+          </div>
+          <h3 className="text-2xl font-bold text-brand-dark mb-2">Premium</h3>
+          <div className="flex items-baseline mb-4">
+            <span className="text-4xl font-bold">$35</span>
+            <span className="text-lg text-brand-gray ml-1">/month</span>
+          </div>
+          <p className="text-brand-gray mb-6 pb-6 border-b border-gray-100">
+            For enterprises requiring comprehensive management.
+          </p>
+          <ul className="space-y-4 mb-8">
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span className="font-medium">All Standard features, plus:</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Enhanced Leave Analytics</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Secure Document Management</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Advanced Reporting & Exports</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+              <span>Dedicated Account Manager</span>
+            </li>
+          </ul>
+        </div>
+        <div className="px-8 pb-8">
+          <Link 
+            to="/payment?plan=premium" 
+            className="block w-full py-3 px-4 rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-center font-medium hover:from-indigo-600 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-lg"
+          >
+            Choose Premium
+          </Link>
+        </div>
+      </motion.div>
+    </div>
+
+    {/* Feature Comparison Section */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="bg-white rounded-2xl shadow-lg p-8 overflow-hidden"
+    >
+      <h3 className="text-2xl font-bold text-brand-dark mb-8 text-center">
+        Compare All Features
+      </h3>
+      <FeatureComparison />
+      
+      {/* Enterprise Option */}
+      <div className="mt-12 pt-8 border-t border-gray-100 text-center">
+        <h4 className="text-xl font-semibold mb-4">Need a Custom Solution?</h4>
+        <p className="text-brand-gray mb-6 max-w-2xl mx-auto">
+          We offer tailored enterprise solutions for large organizations with specific requirements.
+        </p>
+        <Link 
+          to="/contact?subject=enterprise" 
+          className="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-800 hover:bg-gray-200 rounded-lg font-medium transition-colors duration-300"
+        >
+          Contact Sales
+        </Link>
+      </div>
+    </motion.div>
+    
+    {/* Guarantee */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="mt-16 flex flex-col md:flex-row items-center justify-center bg-blue-50 rounded-2xl p-8 text-center md:text-left"
+    >
+      <div className="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mb-4 md:mb-0 md:mr-6 flex-shrink-0">
+        <CheckCircle className="h-8 w-8 text-blue-600" />
+      </div>
+      <div>
+        <h4 className="text-lg font-semibold mb-2">30-Day Money-Back Guarantee</h4>
+        <p className="text-brand-gray">
+          Try LeaveBook risk-free. If you're not completely satisfied within 30 days, we'll refund your payment.
+        </p>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* How It Works Section */}
       <section id="how-it-works" className="py-20">
@@ -442,188 +570,305 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section id="team" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Meet Our Team</h2>
-            <p className="text-xl text-brand-gray max-w-3xl mx-auto">
-              The talented individuals behind LeaveBook.
-            </p>
-          </motion.div>
+      {/* Team Section - Improved */}
+<section id="team" className="py-24 bg-gradient-to-b from-white to-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <span className="text-brand-blue font-medium text-sm uppercase tracking-wider">Our Experts</span>
+      <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4 mt-2">Meet Our Team</h2>
+      <div className="h-1 w-20 bg-brand-blue mx-auto mb-6"></div>
+      <p className="text-xl text-brand-gray max-w-3xl mx-auto">
+        The talented individuals behind LeaveBook dedicated to simplifying leave management.
+      </p>
+    </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 text-center p-6"
-              >
-                <div className="w-24 h-24 rounded-full mx-auto overflow-hidden mb-4 border-2 border-gray-100">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold mb-1 text-brand-dark">{member.name}</h3>
-                <p className="text-brand-gray">{member.role}</p>
-              </motion.div>
-            ))}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {team.map((member, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-xl overflow-hidden shadow-lg group hover:translate-y-[-8px] transition-all duration-300"
+        >
+          <div className="h-64 overflow-hidden">
+            <img
+              src={member.image}
+              alt={member.name}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
-        </div>
-      </section>
+          <div className="p-6 text-center">
+            <h3 className="text-2xl font-semibold mb-1 text-brand-dark">{member.name}</h3>
+            <p className="text-brand-blue font-medium mb-3">{member.role}</p>
+            <p className="text-brand-gray mb-4">{member.bio}</p>
+            <div className="flex justify-center space-x-4">
+              {member.social?.linkedin && (
+                <a href={member.social.linkedin} className="text-gray-400 hover:text-brand-blue transition-colors">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 16h-2v-6h2v6zm1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0V16h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548V16z" />
+                  </svg>
+                </a>
+              )}
+              {member.social?.twitter && (
+                <a href={member.social.twitter} className="text-gray-400 hover:text-blue-400 transition-colors">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                  </svg>
+                </a>
+              )}
+              {member.social?.email && (
+                <a href={`mailto:${member.social.email}`} className="text-gray-400 hover:text-red-500 transition-colors">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
+{/* FAQ Section - Improved */}
+<section id="faq" className="py-24 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <span className="text-brand-blue font-medium text-sm uppercase tracking-wider">Support</span>
+      <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4 mt-2">Frequently Asked Questions</h2>
+      <div className="h-1 w-20 bg-brand-blue mx-auto mb-6"></div>
+      <p className="text-xl text-brand-gray max-w-3xl mx-auto">
+        Everything you need to know about LeaveBook and how it can transform your leave management process.
+      </p>
+    </motion.div>
+
+    <div className="max-w-4xl mx-auto">
+      <FaqSection />
+    </div>
+    
+    <div className="mt-12 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <p className="text-lg text-brand-gray mb-6">Still have questions?</p>
+        <a 
+          href="#contact" 
+          className="inline-flex items-center px-6 py-3 rounded-full bg-brand-blue text-white font-medium hover:bg-brand-blue-dark transition-colors shadow-lg hover:shadow-xl"
+        >
+          <MessageCircle className="w-5 h-5 mr-2" />
+          Contact Our Support Team
+        </a>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
+{/* Contact Section - Improved */}
+<section id="contact" className="py-24 bg-white relative overflow-hidden">
+  {/* Background decoration */}
+  <div className="absolute top-0 right-0 w-1/4 h-1/4 bg-gradient-to-b from-blue-50 to-blue-100 rounded-bl-full opacity-60"></div>
+  <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-t from-blue-50 to-blue-100 rounded-tr-full opacity-60"></div>
+  
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <span className="text-brand-blue font-medium text-sm uppercase tracking-wider">Get In Touch</span>
+      <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4 mt-2">Contact Us</h2>
+      <div className="h-1 w-20 bg-brand-blue mx-auto mb-6"></div>
+      <p className="text-xl text-brand-gray max-w-3xl mx-auto">
+        We'd love to hear from you. Reach out to our team for any questions or schedule a demo.
+      </p>
+    </motion.div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+      {/* Contact Form */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="lg:col-span-3 bg-white p-8 rounded-2xl shadow-xl"
+      >
+        <h3 className="text-2xl font-semibold mb-6 text-brand-dark">Send Us a Message</h3>
+        <form className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-brand-gray mb-1">Your Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue focus:ring-opacity-20 outline-none transition-colors"
+                placeholder="John Doe"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-brand-gray mb-1">Email Address</label>
+              <input 
+                type="email" 
+                id="email" 
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue focus:ring-opacity-20 outline-none transition-colors"
+                placeholder="john@example.com"
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="subject" className="block text-sm font-medium text-brand-gray mb-1">Subject</label>
+            <input 
+              type="text" 
+              id="subject" 
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue focus:ring-opacity-20 outline-none transition-colors"
+              placeholder="How can we help you?"
+            />
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-brand-gray mb-1">Message</label>
+            <textarea 
+              id="message" 
+              rows={5} 
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue focus:ring-opacity-20 outline-none transition-colors"
+              placeholder="Your message here..."
+            ></textarea>
+          </div>
+          <button 
+            type="submit" 
+            className="w-full md:w-auto px-8 py-3 bg-brand-blue hover:bg-brand-blue-dark text-white font-medium rounded-lg transition-colors shadow-md hover:shadow-lg flex items-center justify-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-brand-gray max-w-3xl mx-auto">
-              Find answers to common questions about LeaveBook.
-            </p>
-          </motion.div>
+            <Send className="w-4 h-4 mr-2" />
+            Send Message
+          </button>
+        </form>
+      </motion.div>
 
-          <FaqSection />
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Contact Us</h2>
-            <p className="text-xl text-brand-gray max-w-3xl mx-auto">
-              Get in touch with us for any questions about LeaveBook.
-            </p>
-          </motion.div>
-
-          <div className="max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-sm"
-              >
-                <h3 className="text-xl font-semibold mb-4 text-brand-dark">Contact Information</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <Mail className="w-5 h-5 text-brand-blue mr-3 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Email</p>
-                      <p className="text-brand-gray">leavebookdesk@outlook.com</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <svg className="w-5 h-5 text-brand-blue mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    <div>
-                      <p className="font-medium">Phone</p>
-                      <p className="text-brand-gray">+94 77 160 3251</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <svg className="w-5 h-5 text-brand-blue mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <div>
-                      <p className="font-medium">Address</p>
-                      <p className="text-brand-gray">3G, Araliya Place, Thalahena, Malabe</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-sm"
-              >
-                <h3 className="text-xl font-semibold mb-4 text-brand-dark">Get Connected</h3>
-                <div className="space-y-4">
-                  <a
-                    href="https://youtu.be/IoTlHZCntGE"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors"
-                  >
-                    <PlayCircle className="w-6 h-6 text-red-500 mr-3" />
-                    <div>
-                      <p className="font-medium">Watch Demo</p>
-                      <p className="text-brand-gray text-sm">See LeaveBook in action</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://calendly.com/teamwis-info/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors"
-                  >
-                    <Clock className="w-6 h-6 text-brand-blue mr-3" />
-                    <div>
-                      <p className="font-medium">Schedule a Meeting</p>
-                      <p className="text-brand-gray text-sm">Book a 30-min discovery call</p>
-                    </div>
-                  </a>
-
-                  <div className="flex items-center p-3 rounded-lg">
-                    <div className="flex space-x-3">
-                      <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
-                        <svg className="w-5 h-5 text-brand-gray" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
-                        </svg>
-                      </a>
-                      <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
-                        <svg className="w-5 h-5 text-brand-gray" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                        </svg>
-                      </a>
-                      <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
-                        <svg className="w-5 h-5 text-brand-gray" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 16.892c-2.102.144-6.784.144-8.883 0C5.282 16.736 5.017 15.622 5 12c.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0C18.718 7.264 18.982 8.378 19 12c-.018 3.629-.285 4.736-2.559 4.892zM10 9.658l4.917 2.338L10 14.342V9.658z" />
-                        </svg>
-                      </a>
-                      <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
-                        <svg className="w-5 h-5 text-brand-gray" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 16h-2v-6h2v6zm1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0V16h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548V16z" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+      {/* Contact Info and Social */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="lg:col-span-2 space-y-8"
+      >
+        {/* Contact Information Card */}
+        <div className="bg-gradient-to-br from-brand-blue to-blue-600 p-8 rounded-2xl text-white shadow-xl">
+          <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+          <div className="space-y-6">
+            <div className="flex items-start">
+              <Mail className="w-6 h-6 mr-4 mt-1" />
+              <div>
+                <p className="font-semibold text-white/90 text-sm">Email</p>
+                <a href="mailto:leavebookdesk@outlook.com" className="text-lg hover:underline">leavebookdesk@outlook.com</a>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <Phone className="w-6 h-6 mr-4 mt-1" />
+              <div>
+                <p className="font-semibold text-white/90 text-sm">Phone</p>
+                <a href="tel:+94771603251" className="text-lg hover:underline">+94 77 160 3251</a>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <MapPin className="w-6 h-6 mr-4 mt-1" />
+              <div>
+                <p className="font-semibold text-white/90 text-sm">Address</p>
+                <p className="text-lg">3G, Araliya Place, Thalahena, Malabe</p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+
+        {/* Connect Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="bg-white p-8 rounded-2xl shadow-lg"
+        >
+          <h3 className="text-2xl font-semibold mb-6 text-brand-dark">Get Connected</h3>
+          <div className="space-y-5">
+            <a
+              href="https://youtu.be/IoTlHZCntGE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center p-4 rounded-xl bg-red-50 hover:bg-red-100 transition-colors group"
+            >
+              <div className="bg-red-500 p-3 rounded-full group-hover:scale-110 transition-transform">
+                <PlayCircle className="w-5 h-5 text-white" />
+              </div>
+              <div className="ml-4">
+                <p className="font-semibold text-brand-dark">Watch Demo</p>
+                <p className="text-brand-gray text-sm">See LeaveBook in action</p>
+              </div>
+            </a>
+
+            <a
+              href="https://calendly.com/teamwis-info/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center p-4 rounded-xl bg-blue-50 hover:bg-blue-100 transition-colors group"
+            >
+              <div className="bg-brand-blue p-3 rounded-full group-hover:scale-110 transition-transform">
+                <Calendar className="w-5 h-5 text-white" />
+              </div>
+              <div className="ml-4">
+                <p className="font-semibold text-brand-dark">Schedule a Meeting</p>
+                <p className="text-brand-gray text-sm">Book a 30-min discovery call</p>
+              </div>
+            </a>
+            
+            <div>
+              <p className="font-semibold text-brand-dark mb-3">Follow Us</p>
+              <div className="flex space-x-4">
+                <a href="#" className="bg-gray-100 hover:bg-blue-100 p-3 rounded-full hover:scale-110 transition-all">
+                  <svg className="w-5 h-5 text-brand-blue" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                  </svg>
+                </a>
+                <a href="#" className="bg-gray-100 hover:bg-blue-50 p-3 rounded-full hover:scale-110 transition-all">
+                  <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                  </svg>
+                </a>
+                <a href="#" className="bg-gray-100 hover:bg-red-50 p-3 rounded-full hover:scale-110 transition-all">
+                  <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 16.892c-2.102.144-6.784.144-8.883 0C5.282 16.736 5.017 15.622 5 12c.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0C18.718 7.264 18.982 8.378 19 12c-.018 3.629-.285 4.736-2.559 4.892zM10 9.658l4.917 2.338L10 14.342V9.658z" />
+                  </svg>
+                </a>
+                <a href="#" className="bg-gray-100 hover:bg-blue-50 p-3 rounded-full hover:scale-110 transition-all">
+                  <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 16h-2v-6h2v6zm1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0V16h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548V16z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <Footer />

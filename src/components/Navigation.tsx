@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -20,8 +19,7 @@ const links: NavLink[] = [
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  
-  // Track scroll position for navbar style changes
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -32,7 +30,6 @@ export default function Navigation() {
     };
   }, []);
 
-  // Smooth scroll function
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
     const element = document.getElementById(sectionId.substring(1));
@@ -46,20 +43,29 @@ export default function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed w-full z-50 ${
-        isScrolled 
+      className={`fixed w-full z-50 py-2 ${
+        isScrolled
           ? "bg-white/95 shadow-sm backdrop-blur-sm"
           : "bg-transparent"
       } transition-all duration-300`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-4">
+        <div className="flex items-center justify-between gap-4">
+          {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#" className="flex items-center">
-              <span className="text-2xl font-bold text-brand-dark">LeaveBook</span>
+            <a href="#" className="flex items-center space-x-2">
+              <div className="flex flex-col leading-tight">
+                <div className="text-xl sm:text-2xl font-bold">
+                  <span style={{ color: "#00A6FF" }}>Leave</span>{" "}
+                  <span className="text-gray-800">Book</span>
+                </div>
+                <p className="text-xs sm:text-sm font-light text-gray-600">
+                  Time-off, Just a tap away!
+                </p>
+              </div>
             </a>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="flex items-center space-x-8">
@@ -74,8 +80,8 @@ export default function Navigation() {
               ))}
             </div>
           </div>
-          
-          {/* Mobile Navigation Toggle */}
+
+          {/* Mobile Toggle */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -86,7 +92,7 @@ export default function Navigation() {
           </div>
         </div>
       </div>
-      
+
       {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {isOpen && (
@@ -97,7 +103,7 @@ export default function Navigation() {
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white shadow-lg"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-4 pt-2 pb-4 space-y-1">
               {links.map((link) => (
                 <button
                   key={link.name}
