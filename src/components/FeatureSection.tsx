@@ -29,11 +29,11 @@ export function FeaturesSection({ features }) {
           </motion.div>
           
           {/* Feature categorization tabs */}
-          <div className="flex justify-center mb-12">
+          {/* <div className="flex justify-center mb-12">
             <div className="inline-flex bg-gray-100 rounded-full p-1">
               <button className="px-6 py-2 rounded-full bg-brand-blue text-white font-medium">All Features</button>
             </div>
-          </div>
+          </div> */}
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (

@@ -35,6 +35,7 @@ import Yasindu from "../assets/Yasindu.png";
 import Thinula from "../assets/Thinula.png";
 import Sanidu from "../assets/Sanidu.png";
 import { FeaturesSection } from "@/components/FeatureSection";
+import Email from "@/components/Email";
 
 const Index = () => {
   const { scrollY } = useScroll();
@@ -602,7 +603,7 @@ const Index = () => {
             <img
               src={member.image}
               alt={member.name}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
           <div className="p-6 text-center">
@@ -713,53 +714,7 @@ const Index = () => {
         className="lg:col-span-3 bg-white p-8 rounded-2xl shadow-xl"
       >
         <h3 className="text-2xl font-semibold mb-6 text-brand-dark">Send Us a Message</h3>
-        <form className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-brand-gray mb-1">Your Name</label>
-              <input 
-                type="text" 
-                id="name" 
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue focus:ring-opacity-20 outline-none transition-colors"
-                placeholder="John Doe"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-brand-gray mb-1">Email Address</label>
-              <input 
-                type="email" 
-                id="email" 
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue focus:ring-opacity-20 outline-none transition-colors"
-                placeholder="john@example.com"
-              />
-            </div>
-          </div>
-          <div>
-            <label htmlFor="subject" className="block text-sm font-medium text-brand-gray mb-1">Subject</label>
-            <input 
-              type="text" 
-              id="subject" 
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue focus:ring-opacity-20 outline-none transition-colors"
-              placeholder="How can we help you?"
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-brand-gray mb-1">Message</label>
-            <textarea 
-              id="message" 
-              rows={5} 
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue focus:ring-opacity-20 outline-none transition-colors"
-              placeholder="Your message here..."
-            ></textarea>
-          </div>
-          <button 
-            type="submit" 
-            className="w-full md:w-auto px-8 py-3 bg-brand-blue hover:bg-brand-blue-dark text-white font-medium rounded-lg transition-colors shadow-md hover:shadow-lg flex items-center justify-center"
-          >
-            <Send className="w-4 h-4 mr-2" />
-            Send Message
-          </button>
-        </form>
+        <Email/>
       </motion.div>
 
       {/* Contact Info and Social */}
