@@ -317,7 +317,7 @@ const Index = () => {
           >
             <h3 className="text-2xl font-bold mb-4">Pro</h3>
             <p className="text-4xl font-bold mb-6">
-              $19<span className="text-lg font-normal">/month</span>
+              LKR 220k<span className="text-lg font-normal">/year</span>
             </p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-center">
@@ -326,7 +326,7 @@ const Index = () => {
               </li>
               <li className="flex items-center">
                 <Users className="w-5 h-5 text-brand-blue mr-2" />
-                Up to 10 teams
+                Up to 50 Employees
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 text-brand-blue mr-2" />
