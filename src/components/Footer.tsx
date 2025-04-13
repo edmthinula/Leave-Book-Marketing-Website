@@ -1,4 +1,4 @@
-import { Facebook, Github, Linkedin, Twitter, Youtube, Mail, Phone, MapPin, Calendar, ExternalLink, ArrowUp } from "lucide-react";
+import { Linkedin,Mail, Phone, MapPin, Calendar, ExternalLink, ArrowUp , Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -40,29 +40,20 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <div className="flex items-center mb-6">
-              <div className="h-10 w-10 rounded-lg bg-brand-blue mr-3 flex items-center justify-center">
-                <span className="text-white font-bold text-xl">LB</span>
-              </div>
-              <h3 className="text-2xl font-bold">Leave Book</h3>
+            <div className="text-xl sm:text-2xl font-bold">
+                  <span style={{ color: "#00A6FF" }}>Leave</span>{" "}
+                  <span className="text-gray-800">Book</span>
+                </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Enterprise-grade leave management system with Azure integration, built for modern organizations to streamline workflows and enhance productivity.
             </p>
             <div className="flex space-x-4 mb-8">
-              <a href="#" className="bg-gray-800 hover:bg-brand-blue p-2 rounded-full transition-all duration-300" aria-label="Facebook">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="bg-gray-800 hover:bg-brand-blue p-2 rounded-full transition-all duration-300" aria-label="Twitter">
-                <Twitter size={18} />
-              </a>
-              <a href="#" className="bg-gray-800 hover:bg-brand-blue p-2 rounded-full transition-all duration-300" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/teamwis/" target="black" className="bg-gray-800 hover:bg-brand-blue p-2 rounded-full transition-all duration-300" aria-label="LinkedIn">
                 <Linkedin size={18} />
               </a>
-              <a href="https://youtu.be/IoTlHZCntGE" className="bg-gray-800 hover:bg-red-600 p-2 rounded-full transition-all duration-300" aria-label="YouTube Demo">
-                <Youtube size={18} />
-              </a>
-              <a href="#" className="bg-gray-800 hover:bg-gray-600 p-2 rounded-full transition-all duration-300" aria-label="GitHub">
-                <Github size={18} />
+              <a href="https://www.instagram.com/leavebook/" target="blank" className="bg-gray-800 hover:bg-brand-blue p-2 rounded-full transition-all duration-300" aria-label="Facebook">
+                <Instagram size={18} />
               </a>
             </div>
             <div className="bg-gray-800 p-4 rounded-lg">
@@ -201,7 +192,7 @@ export default function Footer() {
         {/* Bottom Copyright and Legal */}
         <div className="mt-16 pt-8 border-t border-gray-800 text-gray-400 text-sm">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>© {new Date().getFullYear()} Leave Book. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Leave Book BY <a href="https://teamwis.dev" className="font-bold">TeamWIS</a>. All rights reserved </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
